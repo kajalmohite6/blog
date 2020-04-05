@@ -3,7 +3,6 @@ orbs:
   ruby: circleci/ruby@0.1.2 
 
 jobs:
-  - rubocop/rubocop
   build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
@@ -14,3 +13,4 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install
+      - rubocop/rubocop
