@@ -15,5 +15,8 @@ jobs:
           command: bundle -v
       - ruby/bundle-install
     steps:
+      - checkout
       - run:
-      - rubocop/rubocop
+          name: rubocop
+          command: |
+            bundle exec rubocop
